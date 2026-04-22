@@ -2,12 +2,28 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "kill-port-5000",
+            "label": "kill-port-5001",
             "type": "shell",
-            "command": "lsof -ti :5000 | xargs kill -9 2>/dev/null || true",
+            "command": "lsof -ti :5001 | xargs kill -9 2>/dev/null || true",
             "presentation": {
                 "reveal": "silent",
                 "panel": "shared"
+            }
+        },
+        {
+            "label": "Run Full Stack",
+            "type": "shell",
+            "command": "npm run dev & sleep 4 && open -a Safari http://localhost:5173",
+            "options": {
+                "cwd": "${workspaceFolder}/data/abel-portfolio-fullstack"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         }
     ]

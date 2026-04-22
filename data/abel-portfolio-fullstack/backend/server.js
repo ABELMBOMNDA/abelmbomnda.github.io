@@ -9,7 +9,7 @@ import nodemailer from 'nodemailer'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -96,6 +96,15 @@ app.post('/api/contact', async (req, res) => {
   })
 })
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`)
+})
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Stop the existing server and try again.`)
+    process.exit(1)
+  } else {
+    throw err
+  }
 })

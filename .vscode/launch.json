@@ -1,54 +1,34 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Backend",
+            "name": "Backend",
             "cwd": "${workspaceFolder}/data/abel-portfolio-fullstack/backend",
             "runtimeExecutable": "node",
             "runtimeArgs": ["--inspect"],
             "program": "${workspaceFolder}/data/abel-portfolio-fullstack/backend/server.js",
-            "env": { "PORT": "5000" },
-            "preLaunchTask": "kill-port-5000",
+            "env": { "PORT": "5001" },
+            "preLaunchTask": "kill-port-5001",
             "skipFiles": ["<node_internals>/**"],
             "outputCapture": "std"
         },
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Frontend (Chrome)",
+            "name": "Chrome",
             "url": "http://localhost:5173",
             "webRoot": "${workspaceFolder}/data/abel-portfolio-fullstack/frontend/src"
-        },
+        }
+    ],
+    "compounds": [
         {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Frontend (Safari)",
-            "url": "http://localhost:5173",
-            "webRoot": "${workspaceFolder}/data/abel-portfolio-fullstack/frontend/src",
-            "runtimeExecutable": "/Applications/Safari.app/Contents/MacOS/Safari"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Full Stack (Backend + Chrome)",
-            "cwd": "${workspaceFolder}/data/abel-portfolio-fullstack/backend",
-            "runtimeExecutable": "node",
-            "runtimeArgs": ["--inspect"],
-            "program": "${workspaceFolder}/data/abel-portfolio-fullstack/backend/server.js",
-            "env": { "PORT": "5000" },
-            "preLaunchTask": "kill-port-5000",
-            "skipFiles": ["<node_internals>/**"],
-            "outputCapture": "std",
-            "serverReadyAction": {
-                "pattern": "Backend running on",
-                "uriFormat": "http://localhost:5173",
-                "action": "openExternally"
-            }
+            "name": "Full Stack (Chrome + Safari)",
+            "configurations": ["Backend", "Chrome"],
+            "preLaunchTask": "Run Full Stack",
+            "postDebugTask": "Open Safari",
+            "stopAll": true
         }
     ]
 }
