@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import portfolioData from './data/portfolio.json'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,18 +10,6 @@ import Education from './components/Education'
 import Achievements from './components/Achievements'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-
-const defaultData = {
-  navLinks: [],
-  hero: {},
-  about: {},
-  skills: [],
-  projects: [],
-  experience: [],
-  education: [],
-  achievements: [],
-  contact: {},
-}
 
 const projectImageMap = {
   neuralcards: new URL('./assets/projects/project-neuralcards.svg', import.meta.url).href,
@@ -34,25 +23,8 @@ const aboutImage = new URL('./assets/about-card.svg', import.meta.url).href
 
 function App() {
   const isDarkMode = true
-  const [portfolio, setPortfolio] = useState(defaultData)
-  const [loading, setLoading] = useState(true)
+  const [portfolio] = useState(portfolioData)
   const [activeSection, setActiveSection] = useState('home')
-
-  useEffect(() => {
-    async function loadPortfolio() {
-      try {
-        const response = await fetch('/api/portfolio')
-        const data = await response.json()
-        setPortfolio(data)
-      } catch (error) {
-        console.error('Failed to load portfolio data:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    loadPortfolio()
-  }, [])
 
   const sectionIds = useMemo(() => portfolio.navLinks.map((link) => link.id), [portfolio.navLinks])
 
@@ -76,19 +48,6 @@ function App() {
     elements.forEach((element) => observer.observe(element))
     return () => observer.disconnect()
   }, [sectionIds])
-
-  if (loading) {
-    return (
-      <div className={isDarkMode ? 'theme-dark' : 'theme-light'}>
-        <div className="loading-screen">
-          <div className="loading-card">
-            <div className="loading-logo">AM</div>
-            <p>Loading portfolio...</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
 
   const hero = { ...portfolio.hero, image: portfolio.hero.image || heroImage }
   const about = { ...portfolio.about, image: aboutImage }

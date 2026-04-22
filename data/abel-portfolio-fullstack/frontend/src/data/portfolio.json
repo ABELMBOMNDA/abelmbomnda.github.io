@@ -1,0 +1,124 @@
+{
+  "navLinks": [
+    { "id": "home", "label": "Home" },
+    { "id": "about", "label": "About" },
+    { "id": "skills", "label": "Skills" },
+    { "id": "projects", "label": "Projects" },
+    { "id": "experience", "label": "Experience" },
+    { "id": "education", "label": "Education" },
+    { "id": "achievements", "label": "Achievements" },
+    { "id": "contact", "label": "Contact" }
+  ],
+  "hero": {
+    "name": "Abel Mbomnda",
+    "role": "Computer Science Student | Aspiring Software Developer",
+    "tagline": "Building polished digital experiences with structure, clarity, and technical ambition.",
+    "intro": "I create clean, modern, and purposeful projects that blend software development, problem solving, and strong presentation. My goal is to keep growing as a developer while building work that feels professional and memorable.",
+    "image": "/abel-profile.jpg",
+    "resumeLink": "/Abel Mbomnda Resume.pdf"
+  },
+  "about": {
+    "title": "A developer-in-progress with a strong eye for structure and presentation",
+    "description": "I am a Computer Science student who enjoys turning ideas into polished digital experiences. My interests include software development, web interfaces, technical problem solving, and database-centered projects. I care about writing organized code, building projects with purpose, and presenting my work in a way that feels premium, clear, and professional.",
+    "points": [
+      "Focused on steady growth in software engineering, frontend development, and technical project building.",
+      "Comfortable blending technical structure with creativity and clean visual design.",
+      "Driven by discipline, ambition, and a desire to create work that stands out for quality."
+    ]
+  },
+  "skills": [
+    {
+      "title": "Programming Languages",
+      "items": ["JavaScript", "Python", "C++", "HTML", "CSS", "MATLAB", "SQL"]
+    },
+    {
+      "title": "Web Development",
+      "items": ["React", "Vite", "Responsive Design", "Reusable Components", "REST API Basics"]
+    },
+    {
+      "title": "Tools & Platforms",
+      "items": ["GitHub", "VS Code", "MySQL", "WordPress", "Microsoft Office Suite", "Xcode"]
+    },
+    {
+      "title": "Soft Skills",
+      "items": ["Problem Solving", "Adaptability", "Technical Communication", "Teamwork", "English & French"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "NeuralCards",
+      "description": "A flashcard and study platform concept focused on clean generation, organization, and study workflows for learners.",
+      "stack": ["React", "JavaScript", "Express", "MySQL", "CSS"],
+      "github": "https://github.com/ABELMBOMNDA",
+      "live": "",
+      "imageKey": "neuralcards"
+    },
+    {
+      "title": "Soccer DBMS",
+      "description": "A structured football database project for modeling clubs, players, fixtures, contracts, and core competition data.",
+      "stack": ["MySQL", "SQL", "ERD Design", "Database Modeling"],
+      "github": "https://github.com/ABELMBOMNDA",
+      "live": "",
+      "imageKey": "epl"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Salesperson",
+      "organization": "Advance Auto Parts, Ellicott City, MD",
+      "period": "June 2025 - Present",
+      "bullets": [
+        "Propose a variety of parts and alternate options to customers.",
+        "Acquire necessary technical skills to perform daily tasks.",
+        "Program scanners to ensure accurate car scanning.",
+        "Interact with customers to create strong communication and service experiences."
+      ]
+    },
+    {
+      "title": "Honors Commons Assistant",
+      "organization": "Howard Community College, Columbia, MD",
+      "period": "Sep 2024 - May 2025",
+      "bullets": [
+        "Managed and provided support to Honors Societies students (PTK, Rouse Scholars, and Schoenbrodt).",
+        "Acted as the primary contact, assisting and guiding students with honors program inquiries.",
+        "Assisted with honors event planning, ensuring all required tools and personnel were present."
+      ]
+    },
+    {
+      "title": "Research Student",
+      "organization": "PKFOKAM Institute of Excellence Research Center, Yaoundé, Cameroon",
+      "period": "Jan 2021 - Jan 2022",
+      "bullets": [
+        "Assisted the Head of Departments to create data collection programs for the research center.",
+        "Programmed alongside peers to improve applications, software development, and website design skills.",
+        "Collaborated with mentors to acquire a thorough understanding of software development's front-end and back-end roles."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Towson University",
+      "degree": "Bachelor of Science in Computer Science",
+      "meta": "Expected May 2027 · Towson, MD",
+      "coursework": ["Data Structures & Algorithm Analysis", "Operating Systems", "JavaScript", "Principles of Computer Organization", "Introduction to Cyber Security"]
+    },
+    {
+      "school": "Howard Community College",
+      "degree": "Associate of Applied Science in Computer Science",
+      "meta": "Graduated May 2025 · Columbia, MD · Schoenbrodt Honors Scholar",
+      "coursework": ["Python Programming", "Discrete Mathematics", "C++ Programming", "Computer Concepts"]
+    }
+  ],
+  "achievements": [
+    "Schoenbrodt Honors Society member",
+    "HNUR digital marketing team involvement",
+    "Bilingual communication in English and French",
+    "Portfolio-focused builder with strong presentation mindset"
+  ],
+  "contact": {
+    "email": "ambomnd2@students.towson.edu",
+    "phone": "+1 (220) 216-1168",
+    "linkedin": "https://www.linkedin.com/in/abel-mbomnda-925195378",
+    "github": "https://github.com/ABELMBOMNDA"
+  }
+}

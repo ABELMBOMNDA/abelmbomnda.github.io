@@ -24,19 +24,13 @@ function Contact({ contactLinks }) {
     setStatus({ type: '', message: '' })
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
 
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Unable to send message.')
-      }
+      if (!response.ok) throw new Error('Unable to send message.')
 
       setStatus({ type: 'success', message: 'Message sent successfully.' })
       setFormData({ name: '', email: '', subject: '', message: '' })
