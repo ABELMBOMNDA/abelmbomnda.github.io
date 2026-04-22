@@ -5,16 +5,11 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -28,9 +23,8 @@ jobs:
           npm install
           npm run build
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: data/abel-portfolio-fullstack/frontend/dist
-
-      - uses: actions/deploy-pages@v4
-        id: deployment
+          folder: data/abel-portfolio-fullstack/frontend/dist
+          branch: gh-pages
